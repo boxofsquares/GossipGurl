@@ -75,7 +75,7 @@ select
 
 input[type="button"].drop-comments-link {
     float:none !important;
-    font-size: 0.5em;
+    font-size: 1em;
     background: none;
     color:  #dbd98e;
 }
@@ -107,8 +107,13 @@ textarea {
     background:black;
     box-shadow: 0 0 20px #dbd98e;
     border: 1px solid #dbd98e;
+    border-radius: 20px;
     color: #dbd98e;
     padding: 5px 10px 5px 10px;
+}
+
+.bubble-container {
+    width: 50%;
 }
 
 header img {

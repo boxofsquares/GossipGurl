@@ -1,4 +1,4 @@
-﻿@model List<customModel>
+﻿@model List<custommodel>
 @using readTextFile.Models; 
 @{
     ViewBag.Title = "Gossip Gurl";
@@ -21,7 +21,7 @@
 
 @foreach (customModel m in Model)
 {
-    <div id="@m.id-container">
+    <div class="bubble-container" id="@m.id-container">
     @Html.Partial("Blog", m)
     </div>
     <br/>
@@ -40,21 +40,26 @@
             $(document).on("click", '.drop-comments-link', function () {
                 var comments = $(this).siblings('.comments');
                 if (comments.is(":visible")) {
-                    comments.children('ul').children().slideUp('slow', function () { comments.hide() });
-                   }
+                    comments.children('ul').slideUp('slow', function () { comments.hide() });
+                }
                 else {
                     comments.show();
-                    comments.children('ul').children().slideDown('slow');
+                    comments.children('ul').slideDown('slow');
                 }
+            });
+            $(window).bind("mousewheel", function() {
+                $("html, body").stop();
             });
 
         });
         function afterAjax(id) {
             var updatedElement = '#' + id;
-            $(updatedElement + ' .drop-comments-link').click();
-            $('html, body').animate({ scrollTop: $(updatedElement + "-container").offset().top  },
-            2000);
-           
+            $(updatedElement + " .comments").show();
+            $(updatedElement + ' ul').slideDown('slow',
+                 function () { var elementHeight = $(updatedElement + "-container").height();
+                     $('html, body').animate({ scrollTop: $(updatedElement + "-container").offset().top + elementHeight - $(window).height() + 100},
+                        1000)});
+             
         }
 
     </script>

@@ -14,28 +14,33 @@
             <p>@Model.content</p>
             <p>@Model.timestamp</p>
             <input type="button" class="drop-comments-link" value="Comments" />
-            <div class="comments" id="@Model.id-comments" style="display:none;">
+            <div class="comments" id="@Model.id-comments" style="display: none;">
 
 
-                <ul>
+                <ul style="display: none">
                     @foreach (string comment in Model.comments)
                     {
-                        <li style="display:none"><div class="comment">@comment</div></li>
+                        <li>
+                            <div class="comment">@comment</div>
+                        </li>
                     }
+                
+                <li>@Html.TextArea("addedComment")</li>
                 </ul>
-                @Html.TextArea("addedComment")
                 @Html.HiddenFor(b => b.title)
                 @Html.HiddenFor(b => b.content)
                 @Html.HiddenFor(b => b.timestamp)
                 @Html.HiddenFor(b => b.comments)
                 @Html.HiddenFor(b => b.id)
-                <input type="submit" value="Add Comment" />
+                
+                <input type="submit" value="Add Comment" /></li>
+                
             </div>
 
         </div>
-        
-        <script>
+
+<script>
             
-        </script>
-    }
+</script>
+}
         
