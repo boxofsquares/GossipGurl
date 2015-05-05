@@ -1,0 +1,62 @@
+﻿@model List<customModel>
+@using readTextFile.Models; 
+@{
+    ViewBag.Title = "Gossip Gurl";
+    
+}
+@section smallHeader {
+    <header>
+        <div id="image-container">
+            <img src="~/Images/gg-mod.png" />
+            <h2>Your one and only source to the scandalous lives of East Vancouver's not that quite elite.</h2>
+            <br>
+            <h2>- XoXo, Gossip Gurl</h2>
+            <h3>powered by R.Lopez</h3>
+        </div>
+        <div id="fade-container">
+        </div>
+</header>
+}
+
+
+@foreach (customModel m in Model)
+{
+    <div id="@m.id-container">
+    @Html.Partial("Blog", m)
+    </div>
+    <br/>
+}
+
+@{ var url = "window.location.href =\"" + Url.Action("Password") + "\""; }
+<input type="button" value="Add Blast" onclick="@url" style="display:none" />
+
+@section scripts {
+    <script>
+        $(function () {
+            $("#image-container img").dblclick(function () {
+                $("input").show();
+            });
+            //need this way of referencing the click for ajax call, does not work with $(selector).click()
+            $(document).on("click", '.drop-comments-link', function () {
+                var comments = $(this).siblings('.comments');
+                if (comments.is(":visible")) {
+                    comments.children('ul').children().slideUp('slow', function () { comments.hide() });
+                   }
+                else {
+                    comments.show();
+                    comments.children('ul').children().slideDown('slow');
+                }
+            });
+
+        });
+        function afterAjax(id) {
+            var updatedElement = '#' + id;
+            $(updatedElement + ' .drop-comments-link').click();
+            $('html, body').animate({ scrollTop: $(updatedElement + "-container").offset().top  },
+            2000);
+           
+        }
+
+    </script>
+}
+

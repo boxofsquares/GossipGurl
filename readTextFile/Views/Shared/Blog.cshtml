@@ -1,0 +1,41 @@
+﻿@model readTextFile.Models.customModel
+
+
+    @using (Ajax.BeginForm("AddComment", new AjaxOptions
+        {
+            HttpMethod = "POST", // HttpPost
+            InsertionMode = InsertionMode.Replace, // empty the target first
+            UpdateTargetId = @Model.id.ToString() + "-container", // place content within #update-me
+            OnSuccess = "afterAjax(" + @Model.id + ")"
+        }))
+    {
+        <div class="blog-box clear-fix" id="@Model.id">
+            <h2>@Model.title</h2>
+            <p>@Model.content</p>
+            <p>@Model.timestamp</p>
+            <input type="button" class="drop-comments-link" value="Comments" />
+            <div class="comments" id="@Model.id-comments" style="display:none;">
+
+
+                <ul>
+                    @foreach (string comment in Model.comments)
+                    {
+                        <li style="display:none"><div class="comment">@comment</div></li>
+                    }
+                </ul>
+                @Html.TextArea("addedComment")
+                @Html.HiddenFor(b => b.title)
+                @Html.HiddenFor(b => b.content)
+                @Html.HiddenFor(b => b.timestamp)
+                @Html.HiddenFor(b => b.comments)
+                @Html.HiddenFor(b => b.id)
+                <input type="submit" value="Add Comment" />
+            </div>
+
+        </div>
+        
+        <script>
+            
+        </script>
+    }
+        

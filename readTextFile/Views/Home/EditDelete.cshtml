@@ -1,0 +1,23 @@
+﻿@model List<customModel>
+@using readTextFile.Models;
+@{
+    ViewBag.Title = "EditDelete";
+}
+
+<h2>EditDelete</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Blog Title</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(customModel cm in Model)
+        {
+           <tr>
+               <td>@Html.ActionLink(cm.title,"Delete",new { title = cm.title})</td>
+            </tr>
+        }
+    </tbody>
+</table>

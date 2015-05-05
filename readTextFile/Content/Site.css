@@ -1,0 +1,170 @@
+﻿@font-face {
+    font-family:"HelveNueThin";
+    src:url("../fonts/HelveticaNeueThn.eot") format("eot"),url("../fonts/HelveticaNeueThn.woff") format("woff"),url("../fonts/HelveticaNeueThn.ttf") format("truetype"),url("../fonts/HelveticaNeueThn.svg#HelveNueThin") format("svg");
+    font-weight:normal;
+    font-style:normal;
+
+}
+
+body {
+    background-image: url('../Images/xoxobackground.jpg');
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+    color: #dbd98e;
+    font-family: HelveNueThin;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 80%;
+    margin:auto;
+}
+
+h1,h2,h3,h4,h5 {
+    margin: 0;
+    padding: 0;
+}
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+
+/*General List Settings*/
+ul {
+    list-style: none;
+    break-inside: avoid;
+    margin-left: 20px;
+    padding: 0;
+}
+
+li {
+    padding: 3px;
+    margin: 5px;
+}
+/* Set width on the form input elements since they're 100% wide by default */
+label {
+    width: 200px;
+    font-size:  1.2em;
+    font-weight: bold;
+    display: inline-block;
+    padding: 3px;
+    vertical-align: text-top;
+}
+
+a {
+    text-decoration: none;
+    color: #dbd98e;
+    font-size: 1.2em;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+}
+
+input,
+select
+{
+    max-width: 280px;
+}
+
+input[type="button"].drop-comments-link {
+    float:none !important;
+    font-size: 0.5em;
+    background: none;
+    color:  #dbd98e;
+}
+.comments {
+    transition: height linear 1s;
+}
+.comment {
+    font-size: 0.8em;
+    margin: 0;
+    display:block;
+    border-bottom: 1px solid #dbd98e;
+    line-height: 1.5em;
+}
+
+textarea {
+    width: 500px;
+    height: 100px;
+    vertical-align:text-top;
+    background-color: black;
+    color: #dbd98e;
+    scrollbar-base-color: #dbd98e;
+    margin-left: 20px;
+    
+    
+}
+
+.blog-box {
+    margin: 20px 0 20px 0;
+    background:black;
+    box-shadow: 0 0 20px #dbd98e;
+    border: 1px solid #dbd98e;
+    color: #dbd98e;
+    padding: 5px 10px 5px 10px;
+}
+
+header img {
+    margin:auto;
+    height: 300px;
+    width:auto;
+    display:block;
+}
+
+header {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#image-container {
+    background: black;
+    margin-bottom: 0px;
+}
+
+#fade-container {
+    content:" ";
+    height: 40px;
+    background: linear-gradient(to bottom,rgba(0,0,0,1),rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+.clear-fix:after {
+    content: ".";
+    clear:both;
+    display:block;
+    visibility:hidden;
+    height:0;
+}
+
+
+input[type="submit"], input[type="button"] {
+    float:right;
+    background: transparent;
+    color: #dbd98e;
+    font-weight: bold;
+    border: none;
+    padding: 5px;
+    margin: 3px;
+    font-size: 1.2em;
+    text-shadow: 0 0 5px #dbd98e;
+}
+
+    input[type="submit"]:hover, input[type="button"]:hover {
+        cursor: pointer;
+    }
+
+
+/*Validation CSS*/
+.field-validation-error {
+    color: red;
+    display: inline-block;
+    font-weight: bold;
+}
+
