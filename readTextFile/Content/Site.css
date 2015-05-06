@@ -21,6 +21,7 @@ body {
     padding-right: 15px;
     width: 80%;
     margin:auto;
+    position:relative;
 }
 
 h1,h2,h3,h4,h5 {
@@ -91,15 +92,13 @@ input[type="button"].drop-comments-link {
 }
 
 textarea {
-    width: 500px;
+    width: 60%;
     height: 100px;
     vertical-align:text-top;
     background-color: black;
     color: #dbd98e;
     scrollbar-base-color: #dbd98e;
-    margin-left: 20px;
-    
-    
+      
 }
 
 .blog-box {
@@ -113,7 +112,21 @@ textarea {
 }
 
 .bubble-container {
-    width: 50%;
+    width: 60%;
+}
+
+.bubble-left {
+    float:left;
+}
+
+.bubble-right {
+    float:right;
+}
+
+#addBlast {
+    position:absolute;
+    bottom: 0;
+    right:0;
 }
 
 header img {

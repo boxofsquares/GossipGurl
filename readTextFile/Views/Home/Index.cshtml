@@ -1,8 +1,9 @@
-﻿@model List<custommodel>
+﻿@model List<customModel>
+
 @using readTextFile.Models; 
 @{
     ViewBag.Title = "Gossip Gurl";
-    
+    int pos = 1;
 }
 @section smallHeader {
     <header>
@@ -18,17 +19,23 @@
 </header>
 }
 
-
 @foreach (customModel m in Model)
-{
-    <div class="bubble-container" id="@m.id-container">
+{   
+     
+        string position;
+        if((pos % 2) == 1)
+        {position = "bubble-left";}
+        else { position = "bubble-right";}
+        pos += 1;
+        
+    <div class="bubble-container @position .clear-fix" id="@m.id-container">
     @Html.Partial("Blog", m)
     </div>
-    <br/>
+    
 }
 
 @{ var url = "window.location.href =\"" + Url.Action("Password") + "\""; }
-<input type="button" value="Add Blast" onclick="@url" style="display:none" />
+<input id="addBlast" type="button" value="Add Blast" onclick="@url" style="display:none" />
 
 @section scripts {
     <script>

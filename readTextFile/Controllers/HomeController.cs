@@ -28,6 +28,7 @@ namespace readTextFile.Controllers
         public ActionResult Create(customModel model)
         {
             //List<customModel> obj = JsonConvert.DeserializeObject<List<customModel>>(System.IO.File.ReadAllText(Server.MapPath("~/App_Data/json.json")));
+            model.id = Global.obj.Max(b => b.id) + 1;
             Global.obj.Insert(0, model);
 
             SerializeBlogJson(Global.obj);
