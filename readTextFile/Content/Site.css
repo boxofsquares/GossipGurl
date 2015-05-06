@@ -5,6 +5,11 @@
     font-style:normal;
 
 }
+html, body {
+    margin:0;
+    padding:0;
+    height:100%;
+}
 
 body {
     background-image: url('../Images/xoxobackground.jpg');
@@ -13,15 +18,20 @@ body {
 	background-size: cover;
     color: #dbd98e;
     font-family: HelveNueThin;
+
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
+    margin:0;
+    padding:0;
     padding-left: 15px;
     padding-right: 15px;
     width: 80%;
     margin:auto;
     position:relative;
+    min-height:90%;
+    padding-bottom: 2em;
 }
 
 h1,h2,h3,h4,h5 {
@@ -72,6 +82,12 @@ input,
 select
 {
     max-width: 280px;
+    background: black;
+    color: #dbd98e;
+}
+
+p {
+    line-height: 1.2em;
 }
 
 input[type="button"].drop-comments-link {
@@ -142,11 +158,25 @@ header {
     text-align: center;
 }
 
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    height: 2em;
+}
+
 #image-container {
     background: black;
     margin-bottom: 0px;
 }
 
+fieldset {
+    border:none;
+    background:black;
+    margin:auto;
+    width: 40%;
+}
 #fade-container {
     content:" ";
     height: 40px;

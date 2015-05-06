@@ -25,7 +25,9 @@
                         </li>
                     }
                 
-                <li>@Html.TextArea("addedComment")</li>
+                <li>@Html.TextArea("addedComment")
+                    <input type="submit" value="Add Comment" style="float:none;font-size:1em;" />
+                </li>
                 </ul>
                 @Html.HiddenFor(b => b.title)
                 @Html.HiddenFor(b => b.content)
@@ -33,7 +35,7 @@
                 @Html.HiddenFor(b => b.comments)
                 @Html.HiddenFor(b => b.id)
                
-                <input type="submit" value="Add Comment" style="float:none"/>
+                
                 
             </div>
 
